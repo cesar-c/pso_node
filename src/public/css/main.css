@@ -1,0 +1,67 @@
+body {
+    background: #bcdce9;
+}
+
+.logo{
+    width: 30%;
+}
+
+/* ESTILOS FORM PRODUCTO */
+#formFile {
+    display: none;
+}
+
+.img-area{
+    flex-grow: 1;
+    padding: 5%;
+    width: 300px;
+}
+.inputs{
+    flex-grow: 1;
+}
+
+.img-label{
+    font-size: 15px;
+    padding: 10px;
+    color: #FFF;
+    border-radius: 3px;
+    background: #AAA;
+}
+.img-label:hover{
+    background: #999;
+}
+
+#view{
+    max-width: 80%;
+    outline: 2px solid #1488cc;
+}
+
+
+/* Estilos tabla de productos */
+
+.table-img{
+    max-height: 100px;
+}
+
+.cont-table{
+    overflow-x: auto;
+}
+
+/* Estilos Lista de productos*/
+#detalle_solicitud{
+    height: 40%;
+}
+#list_items_container{
+    max-height: 15rem;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+/* edición de bootstrap*/
+.btn{
+    border-radius: 0;
+}
+
+.accordion-button{
+    padding: 0.5rem 0.67rem;
+}

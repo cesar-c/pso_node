@@ -1,0 +1,46 @@
+<div class="col-md-8 mx-auto">
+    <div class="card">
+        <div class="card-header">
+            <h3>Crear Producto</h3>
+        </div>
+        <div class="card-body">
+            {{#if create }}
+            <form action="/products/add" method="POST" enctype="multipart/form-data">
+            {{else}}
+            <form action="/products/edit/{{product.id}}?_method=PUT" method="POST" enctype="multipart/form-data">
+                <input type="hidden" name="_method" value="PUT">
+            {{/if}}
+            
+                <div class="d-flex flex-wrap">
+                    <div class="inputs">
+                        <div class="mt-4">
+                            <input type="text" name="name" class="form-control" placeholder="Nombre" value="{{product.name}}" required>
+                        </div>
+                        <div class="mt-4">
+                            <option value="#">Seleccione unidad</option>
+                            <select class="form-control" name="unitId">
+                                {{#each units}}
+                                    <option value="{{id}}" {{#if (areEquals id ../product.unitid)}} selected {{/if}}>{{name}} - {{symbol}}</option>
+                                {{/each}}
+                            </select>
+                        </div>
+                        <div class="mt-4">
+                            <textarea type="text" name="description" class="form-control" placeholder="Descripción" required>{{product.description}}</textarea>
+                        </div>
+                    </div>
+                    <div class="img-area text-center">
+                        <label for="formFile" class="img-label">Subir Imagen</label>
+                        <div>
+                            <img  id="view"  {{#if product.img}}  src="/img/products/{{product.img}}" {{/if}}>
+                        </div>
+                        <input class="form-control" type="file" id="formFile" name='img' onchange="preview(event);">
+                    </div>
+                </div>
+                <div class="mt-4">
+                    <button type="submit" class="btn btn-primary btn-block">Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+<script src="/js/preview.js"></script>

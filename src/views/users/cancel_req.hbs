@@ -1,0 +1,19 @@
+<div class="row">
+    <div class="col-md-4 mx-auto">
+        <div class="card">
+            <div class="card-header">
+                Cancelar solicitud
+            </div>
+            ¿Seguro que desea cancelar la solicitud?
+            <div class="card-body">
+                <form action="{{url}}?_method=DELETE" method="POST">
+                    <input type="hidden" name="_method" value="DELETE">
+                        <button class="btn btn-primary w-100">
+                            Sí
+                        </button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

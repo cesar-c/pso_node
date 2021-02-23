@@ -1,0 +1,101 @@
+<div class="row ">
+    <section class="accordion col-12 col-sm-5 col-md-4   pt-4" id="accordionExample">
+        <div class="accordion-item bg-light">
+            <h2 class="accordion-header" id="headingOne">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                    Lista de compras
+            </button>
+            </h2>
+            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+                <div id="list_spiner" class="d-flex  justify-content-evenly">
+                  <div class="spinner-grow spinner-grow-sm text-info mb-auto mt-auto" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                  </div>
+                  <div class="spinner-grow text-info" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                  </div>
+                  <div class="spinner-grow spinner-grow-sm text-info mb-auto mt-auto" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                  </div>
+                </div>
+                <div class="form-floating">
+                  <textarea class="form-control" placeholder="Leave a comment here" onchange="list_items.save_detalle(event)" id="detalle_solicitud"></textarea>
+                  <label for="detalle_solicitud">Detalle sobre la solicitud</label>
+                </div>
+                <div id="list_items_container">
+                  
+                  
+                </div>
+                <div class="pt-2">
+                  <button class="btn btn-info w-100"  onclick="list_items.submit()" >Enviar solicitud</button>
+                </div>
+            </div>
+            </div>
+        </div>
+        <div class="accordion-item bg-light">
+            <h2 class="accordion-header" id="headingTwo">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                Filtros
+            </button>
+            </h2>
+            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+                <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+            </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="col-12  col-sm-7 col-md-8  " >
+        <div id="content_cards" class="row row-cols-1 row-cols-sm-2 row-cols-lg-4">
+              Cargando
+        </div>
+    </section>
+</div>
+
+
+<!-- Modal productos-->
+<div class="modal  fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="infoModalLabel">Detalles del Producto</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body row">
+        <div class="col-12 col-md-6 mt-4">
+          <img class="w-100" src="" id="modal_product_img">
+        </div>
+        <div class="col-12 col-md-6 mt-4">
+          <div class="row">
+            <h4 id="modal_product_nombre" class="col col-8"></h4>
+            <a href="#" id="modal_product_ficha" class="btn btn-dark col col-3">F. Técnica</a>
+          </div>
+          <p id="modal_product_description"></p>
+          <form action="#" onsubmit="return false;" >
+            <div class="mb-3 row">
+              <label for="modal_form_cantidad" class="col-sm-2 col-form-label" >Cantidad</label>
+              <div class="col-sm-10">
+                <input type="number" step="any"  class="form-control" id="modal_form_cantidad" value="" placeholder="">
+              </div>
+            </div>
+            <div class="form-floating">
+              <textarea class="form-control"  id="modal_form_detalle" style="height: 100px"></textarea>
+              <label for="modal_form_detalle">Detalles con respecto al producto</label>
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-info" data-product-id onclick="save_solic(event)">
+          <span class="d-none spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+          Solicitar  
+          </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
